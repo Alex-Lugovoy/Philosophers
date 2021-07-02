@@ -13,7 +13,7 @@ FLAGS 	= -Wall -Wextra -Werror -I$(DIR)
 CC		= gcc
 
 .c.o:
-	$(CC) $(FLAGS) -c $< -o $(<:.c=.o) #после СС флаги
+	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 

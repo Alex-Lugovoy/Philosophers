@@ -1,11 +1,21 @@
 #include "philo.h"
 
+void	add_param(t_main *main, int i, char **arg)
+{
+	main->philo[i].ti_die = ft_atoi(arg[2]);
+	main->philo[i].ti_eat = ft_atoi(arg[3]);
+	main->philo[i].ti_sleep = ft_atoi(arg[4]);
+	main->philo[i].ti_last_eat = 0;
+}
+
 void	complete_philo(t_main *main, char **arg, int i)
 {
 	unsigned long long	temp;
 
 	temp = ft_time(0);
 	main->first = temp;
+	if (arg[5])
+		main->times_eat = ft_atoi(arg[5]);
 	while (++i < main->count_phil)
 	{
 		main->philo[i].philo_numb = i + 1;
@@ -13,10 +23,7 @@ void	complete_philo(t_main *main, char **arg, int i)
 			main->philo[i].even = 1;
 		else
 			main->philo[i].even = 0;
-		main->philo[i].ti_die = ft_atoi(arg[2]);
-		main->philo[i].ti_eat = ft_atoi(arg[3]);
-		main->philo[i].ti_sleep = ft_atoi(arg[4]);
-		main->philo[i].ti_last_eat = 0;
+		add_param(main, i, arg);
 		if (arg[5])
 			main->philo[i].value_eat = ft_atoi(arg[5]);
 		else

@@ -31,6 +31,7 @@ typedef struct s_main
 	unsigned long long		first;
 	pthread_mutex_t			output;
 	pthread_mutex_t			*forks;
+	int						times_eat;
 }						t_main;
 
 int				argv_check(int argc, char **argv);

@@ -14,7 +14,11 @@ int	check_status(t_main *main)
 		i++;
 	}
 	if (j == main->count_phil)
+	{
+		pthread_mutex_lock(&main->output);
+		printf("all the philosophers ate %d times\n", main->times_eat);
 		return (1);
+	}
 	return (0);
 }
 
