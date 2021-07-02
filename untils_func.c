@@ -3,17 +3,17 @@
 static int	ft_isspace(int s)
 {
 	if ((s == ' ' || s == '\v' || s == '\t' || s == '\f'
-		|| s == '\n' || s == '\r') && s != '\0')
+			|| s == '\n' || s == '\r') && s != '\0')
 		return (1);
 	else
 		return (0);
 }
 
-int			ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
-	int		i;
-	int		minus;
-	long int	cif;
+	int				i;
+	int				minus;
+	long long int	cif;
 
 	i = 0;
 	minus = 1;
@@ -36,10 +36,9 @@ int			ft_atoi(const char *s)
 	return ((int)cif);
 }
 
-
 static int	ft_isdigit(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -53,11 +52,9 @@ static int	ft_isdigit(char *str)
 
 int	argv_check(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	// if (ft_atoi(argv[1]) <= 0 || ft_isdigit(argv[1]))
-	// 	return (1);
 	if (ft_atoi(argv[2]) <= 0 || ft_isdigit(argv[2]))
 		i = 1;
 	if (ft_atoi(argv[3]) <= 0 || ft_isdigit(argv[3]))

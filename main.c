@@ -1,8 +1,8 @@
 #include "philo.h"
 
-void complete_philo(t_main *main, char **arg, int i)
+void	complete_philo(t_main *main, char **arg, int i)
 {
-	unsigned long long temp;
+	unsigned long long	temp;
 
 	temp = ft_time(0);
 	main->first = temp;
@@ -28,12 +28,10 @@ void complete_philo(t_main *main, char **arg, int i)
 	}
 }
 
-int fill_philo(char **arg, t_main *main)
+int	fill_philo(char **arg, t_main *main)
 {
-	int j;
+	int	j;
 
-	// if (memory_alloc(arg, main))
-	// 	return (1);
 	j = 0;
 	while (j < main->count_phil)
 	{
@@ -45,22 +43,14 @@ int fill_philo(char **arg, t_main *main)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_main main;
+	t_main	main;
 
 	if (argc == 5 || argc == 6)
 	{
 		if (memory_alloc(argv, &main, argc))
 			return (1);
-// 		if (argv_check(argc, argv))
-// 		{
-// 			printf("You entered incorrect data, I hope you will not do\
-//  this anymore\n");
-// 			return (1);
-// 		}
-// 		if(fill_philo(argv, &main))
-// 			return (1);
 	}
 	else
 	{
@@ -68,7 +58,6 @@ int main(int argc, char **argv)
  this anymore\n");
 		return (1);
 	}
-	// philo_start(&main, -1);
 	free_pthread(&main);
 	return (0);
 }

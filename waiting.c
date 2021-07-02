@@ -2,7 +2,7 @@
 
 unsigned long	ft_time(unsigned long temp)
 {
-	struct			timeval timezone;
+	struct timeval	timezone;
 	unsigned long	result;
 
 	gettimeofday(&timezone, NULL);
