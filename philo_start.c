@@ -50,8 +50,8 @@ int	philo_start(t_main *main, int j)
 		j = -1;
 		while (++j < main->count_phil)
 		{
-			if (ft_time(main->first) - main->philo[j].ti_last_eat \
-			>= main->philo[j].ti_die && main->philo[j].value_eat != 0)
+			if (ft_time(main->first) - main->philo[j].ti_last_eat
+				>= main->philo[j].ti_die && main->philo[j].value_eat != 0)
 			{
 				pthread_mutex_lock(main->philo[j].output);
 				printf("%lu ms %d died\n", ft_time(main->first),
