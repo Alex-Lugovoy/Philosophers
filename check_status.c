@@ -14,7 +14,10 @@ int	check_status(t_main *main)
 		i++;
 	}
 	if (j == main->count_phil)
+	{
+		printf("j = %d == count phil = %d\n", j, main->count_phil);
 		return (1);
+	}
 	return (0);
 }
 

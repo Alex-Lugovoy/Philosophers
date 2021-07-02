@@ -53,18 +53,26 @@ static int	ft_isdigit(char *str)
 
 int	argv_check(int argc, char **argv)
 {
-	if (ft_atoi(argv[1]) <= 0 || ft_isdigit(argv[1]))
-		return (1);
+	int i;
+
+	i = 0;
+	// if (ft_atoi(argv[1]) <= 0 || ft_isdigit(argv[1]))
+	// 	return (1);
 	if (ft_atoi(argv[2]) <= 0 || ft_isdigit(argv[2]))
-		return (1);
+		i = 1;
 	if (ft_atoi(argv[3]) <= 0 || ft_isdigit(argv[3]))
-		return (1);
+		i = 1;
 	if (ft_atoi(argv[4]) <= 0 || ft_isdigit(argv[4]))
-		return (1);
+		i = 1;
 	if (argc == 6)
 	{
 		if (ft_atoi(argv[5]) <= 0 || ft_isdigit(argv[5]))
-			return (1);
+			i = 1;
+	}
+	if (i == 1)
+	{
+		printf("Wrong argument\n");
+		return (1);
 	}
 	return (0);
 }

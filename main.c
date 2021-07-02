@@ -19,6 +19,8 @@ void complete_philo(t_main *main, char **arg, int i)
 		main->philo[i].ti_last_eat = 0;
 		if (arg[5])
 			main->philo[i].value_eat = ft_atoi(arg[5]);
+		else
+			main->philo[i].value_eat = -1;
 		main->philo[i].left_f = &main->forks[i];
 		main->philo[i].right_f = &main->forks[(i + 1) % main->count_phil];
 		main->philo[i].output = &main->output;
@@ -30,8 +32,8 @@ int fill_philo(char **arg, t_main *main)
 {
 	int j;
 
-	if (memory_alloc(arg, main))
-		return (1);
+	// if (memory_alloc(arg, main))
+	// 	return (1);
 	j = 0;
 	while (j < main->count_phil)
 	{
@@ -49,14 +51,16 @@ int main(int argc, char **argv)
 
 	if (argc == 5 || argc == 6)
 	{
-		if (argv_check(argc, argv))
-		{
-			printf("You entered incorrect data, I hope you will not do\
- this anymore\n");
+		if (memory_alloc(argv, &main, argc))
 			return (1);
-		}
-		if(fill_philo(argv, &main))
-			return (1);
+// 		if (argv_check(argc, argv))
+// 		{
+// 			printf("You entered incorrect data, I hope you will not do\
+//  this anymore\n");
+// 			return (1);
+// 		}
+// 		if(fill_philo(argv, &main))
+// 			return (1);
 	}
 	else
 	{
@@ -64,7 +68,7 @@ int main(int argc, char **argv)
  this anymore\n");
 		return (1);
 	}
-	philo_start(&main, -1);
+	// philo_start(&main, -1);
 	free_pthread(&main);
 	return (0);
 }

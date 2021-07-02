@@ -38,11 +38,17 @@ typedef struct				s_main
 
 int				argv_check(int argc, char **argv);
 int				ft_atoi(const char *s);
-int				memory_alloc(char **arg, t_main *main);
+// int				memory_alloc(char **arg, t_main *main);
+int 			memory_alloc(char **arg, t_main *main, int argc);
 int				philo_start(t_main *main, int j);
 unsigned long	ft_time(unsigned long temp);
 void			ft_wait(unsigned long waiting);
 void			free_pthread(t_main *main);
 int				check_status(t_main *main);
+int				fill_philo(char **arg, t_main *main);
+void			printf_mutex_fork(t_phil *philo);
+void			printf_mutex_eat(t_phil *philo);
+void			printf_mutex_sleep(t_phil *philo);
+void			printf_mutex_think(t_phil *philo);
 
 #endif

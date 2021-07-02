@@ -2,7 +2,7 @@ NAME 	= philo
 
 DIR 	= .
 
-LIST 	=	main.c untils_func.c memory_alloc.c philo_start.c waiting.c check_status.c
+LIST 	=	main.c untils_func.c memory_alloc.c philo_start.c waiting.c check_status.c printf_mutex.c
 
 OBJ 	=	$(LIST:.c=.o)
 
@@ -16,7 +16,7 @@ CC		= gcc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(OBJ) -o $(NAME) -fsanitize=address #после СС флаги
+		$(CC) $(OBJ) -o $(NAME) #-fsanitize=address #после СС флаги
 clean:
 	rm -f $(OBJ)
 
