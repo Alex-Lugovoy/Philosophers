@@ -54,9 +54,6 @@ void put_and_sleep(t_phil *philo)
 	ft_wait(philo->ti_sleep);
 	if (philo->value_eat != -1)
 		philo->value_eat -= 1;
-	printf("!!! %d !!!\n", philo->value_eat);
-	// if (philo->value_eat == 0)
-	// 	philo->six_arg = -1;
 }
 
 void *life_philo(void *str)

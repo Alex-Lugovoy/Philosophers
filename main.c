@@ -18,10 +18,7 @@ void complete_philo(t_main *main, char **arg, int i)
 		main->philo[i].ti_sleep = ft_atoi(arg[4]);
 		main->philo[i].ti_last_eat = 0;
 		if (arg[5])
-		{
 			main->philo[i].value_eat = ft_atoi(arg[5]);
-			// main->philo[i].six_arg = 0;
-		}
 		main->philo[i].left_f = &main->forks[i];
 		main->philo[i].right_f = &main->forks[(i + 1) % main->count_phil];
 		main->philo[i].output = &main->output;
